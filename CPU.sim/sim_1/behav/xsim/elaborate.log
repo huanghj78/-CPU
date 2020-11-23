@@ -1,0 +1,32 @@
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/vivado2020/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 114d3d4fd6f64d159d3458eb89a219a1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot CPU_sim_behav xil_defaultlib.CPU_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'Mux4' [D:/vivado/CPU/CPU.srcs/sim_1/new/CPU_sim.v:79]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.Add1
+Compiling module xil_defaultlib.Shift_2
+Compiling module xil_defaultlib.Add2
+Compiling module xil_defaultlib.And_gate
+Compiling module xil_defaultlib.Mux3
+Compiling module xil_defaultlib.PC_for_jump
+Compiling module xil_defaultlib.Mux5
+Compiling module xil_defaultlib.Instruction_memory
+Compiling module xil_defaultlib.Mux1
+Compiling module xil_defaultlib.Registers
+Compiling module xil_defaultlib.Control
+Compiling module xil_defaultlib.Sign_extend
+Compiling module xil_defaultlib.Mux2
+Compiling module xil_defaultlib.ALU_control
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Data_memory
+Compiling module xil_defaultlib.Mux4
+Compiling module xil_defaultlib.CPU_sim
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot CPU_sim_behav
