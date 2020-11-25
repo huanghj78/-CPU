@@ -21,9 +21,9 @@
 
 
 module ALU_control(input [1:0] ALUOp,input [5:0] ins_5_0,output reg [3:0] toALU);
-always@(ALUOp or ins_5_0 )begin
-if(ALUOp == 2'b00) toALU <= 4'b0010;
-if(ALUOp == 2'b01) toALU <= 4'b0110;
+always@(ALUOp or ins_5_0)begin
+if(ALUOp == 2'b00) begin toALU <= 4'b0010;end
+if(ALUOp == 2'b01) begin toALU <= 4'b0110;end
 if(ALUOp == 2'b10)begin
     case(ins_5_0)
     6'b100000: toALU <= 4'b0010;

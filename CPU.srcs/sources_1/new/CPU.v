@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2020/11/22 14:53:50
+// Create Date: 2020/11/23 20:51:14
 // Design Name: 
-// Module Name: CPU_sim
+// Module Name: CPU
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,8 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module CPU_sim();
-reg clk1 =0; always #50 clk1 = ~clk1;
+module CPU(input clk);
 reg init; initial init = 1'b0;
 wire Branch;
 wire Jump;
@@ -33,8 +32,13 @@ wire ALUSrc;
 wire MemtoReg;
 wire [1:0] ALUOp;
 
+reg [31:0]PC_init;
+initial begin
+PC_init = 32'b00000000000000000000000000000000;
+end
 
 wire [31:0] Mux3_out;
+//wire [31:0] PC_in = 32'b00000000000000000000000000000000;
 wire [31:0] PC_out;
 wire [31:0] Add1_out;
 wire [31:0] Add2_out;
@@ -43,7 +47,7 @@ wire [31:0] instruction;
 wire [4:0] Mux1_out;
 wire [31:0] Mux4_out;
 wire [31:0] Mux5_out;
-wire [31:0] Read_data_1;
+wire [31:0] Read_data_1 ;
 wire [31:0] Read_data_2;
 wire [31:0] Sign_extend_out;
 wire [31:0] Mux2_out;
@@ -55,8 +59,7 @@ wire [15:0] Sign_extend_in = instruction[15:0];
 wire Zero;
 wire And_gate_out;
 
-
-PC pc(clk1,Mux5_out,PC_out);
+PC pc(clk,Mux5_out,PC_out);
 Add1 add1(PC_out,Add1_out);
 Shift_2 shift_2(Sign_extend_out,Shift_2_out);
 Add2 add2(Add1_out,Shift_2_out,Add2_out);
@@ -64,8 +67,6 @@ And_gate and_gate(Branch,Zero,And_gate_out);
 Mux3 mux3(Add1_out,Add2_out,And_gate_out,Mux3_out);//??
 PC_for_jump pc_for_jump(PC_out,instruction,PCforJump);
 Mux5 mux5(PCforJump,Mux3_out,Jump,Mux5_out);
-
-
 Instruction_memory instruction_memory(PC_out,instruction);
 Mux1 mux1(RegDst,instruction[15:11],instruction[20:16],Mux1_out);
 Registers registers(RegWrite,instruction[25:21],instruction[20:16],Mux4_out,Mux1_out,Read_data_1,Read_data_2);

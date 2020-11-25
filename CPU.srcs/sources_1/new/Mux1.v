@@ -21,8 +21,8 @@
 
 
 module Mux1(input RegDst,input [4:0] ins_15_11,input [4:0] ins_20_16,output reg [4:0]out);
-always@(ins_15_11 or ins_20_16)begin
-if(RegDst == 0)out <= ins_20_16;
-else out<= ins_15_11;
+always@(RegDst or ins_15_11 or ins_20_16)begin
+if(RegDst == 1'b0)begin out <= ins_20_16;end
+else begin out<= ins_15_11;end
 end
 endmodule

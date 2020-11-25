@@ -36,4 +36,3 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/vivado/CPU/CPU.srcs/sources_1/ne
 INFO: [VRFC 10-311] analyzing module Sign_extend
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/vivado/CPU/CPU.srcs/sim_1/new/CPU_sim.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module CPU_sim
-INFO: [VRFC 10-2458] undeclared symbol RegWrite, assumed default net type wire [D:/vivado/CPU/CPU.srcs/sim_1/new/CPU_sim.v:79]
