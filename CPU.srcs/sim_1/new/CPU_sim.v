@@ -22,7 +22,6 @@
 
 module CPU_sim();
 reg clk1 =0; always #50 clk1 = ~clk1;
-reg init; initial init = 1'b0;
 wire Branch;
 wire Jump;
 wire RegDst;
